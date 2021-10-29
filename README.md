@@ -207,30 +207,42 @@ Spring Boot DevTools
 
 a) 
 
-<properties>
-   <keycloak.version>15.0.2</keycloak.version>
-</properties>
+< properties >
 
-b)
-
-   <dependency>
-      <groupId>org.keycloak</groupId>
-      <artifactId>keycloak-spring-boot-starter</artifactId>
-      <version>${keycloak.version}</version>
-   </dependency>
+   < keycloak.version>15.0.2</keycloak.version >
    
-   	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-web</artifactId>
-		<version>5.5.0</version>
-	</dependency>
+< /properties >
+
+
+   < dependency >
+   
+      < groupId >org.keycloak< /groupId >
+      
+      < artifactId >keycloak-spring-boot-starter< /artifactId >
+      
+      < version >${keycloak.version}< /version>
+      
+   < /dependency >
+   
+   	< dependency >
+	
+		< groupId >org.springframework.security< /groupId >
+		
+		< artifactId >spring-security-web< /artifactId >
+		
+		< version >5.5.0< /version >
+		
+	< /dependency >
 	
 	
-	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-config</artifactId>
-		<version>5.5.1</version>
-	</dependency>
+	< dependency >
+		< groupId >org.springframework.security< /groupId >
+		
+		< artifactId >spring-security-config< /artifactId >
+		
+		< version >5.5.1< /version >
+		
+	< /dependency >
    
    
 c) Add Dependency Management
