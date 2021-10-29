@@ -11,7 +11,9 @@ In this implementation the microservice IPL-Microservice will expose 4 endpoints
 This microservice defines 3 roles viz
 
 player
+
 umpire
+
 matchreferee
 
 Thus 
