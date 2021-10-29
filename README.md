@@ -265,12 +265,19 @@ Below the <dependencies> section add below section.
 2) add the below in application.properties file
 
 server.port                         = 8099
+	
 keycloak.realm                      = IPL-Realm
+	
 keycloak.auth-server-url            = http://localhost:8080/auth
+	
 keycloak.ssl-required               = external
+	
 keycloak.resource                   = IPL-Microservice
+	
 keycloak.credentials.secret         = ca1c9dcb-63c0-448c-8f20-d8737b8dcc70
+	
 keycloak.use-resource-role-mappings = true
+	
 keycloak.bearer-only                = true
 
 
