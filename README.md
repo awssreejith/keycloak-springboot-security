@@ -42,7 +42,8 @@ This shows the following:-
 
 Step-1:- Installing and starting keycloak
 =========================================
-Note: For installation follow the belo link
+Note: For installation follow the below link
+
 https://medium.com/@hasnat.saeed/setup-keycloak-server-on-ubuntu-18-04-ed8c7c79a2d9
 
 0) start an ec-2 instance
