@@ -23,15 +23,17 @@ Thus
  
  
 
-The same notes can be found under Notes.txt file as well
+The same notes can be found under Notes.txt file as well!!!
+==========================================================
 
 
-VERY VERY IMPORTANT:- IF YOU ARE INSTALLING KEYCLOAK IN A DIFFERENT SERVER AND APPLICATIONS RUNNING IN ANOTHER SERVER
-THEN KEYCLOAK REQUIRES HTTPS. IF YOU WANT TO CONFIGURE HTTPS THE FIRST FOLLOW THE BELOW LINK TO ENABLE HTTPShttps://wjw465150.gitbooks.io/keycloak-documentation/content/server_installation/topics/network/https.html
+VERY VERY IMPORTANT:- IF YOU ARE INSTALLING KEYCLOAK IN A DIFFERENT SERVER AND APPLICATIONS RUNNING IN ANOTHER SERVER THEN KEYCLOAK REQUIRES HTTPS. IF YOU WANT TO CONFIGURE HTTPS THE FIRST FOLLOW THE BELOW LINK TO ENABLE HTTPS
+
+https://wjw465150.gitbooks.io/keycloak-documentation/content/server_installation/topics/network/https.html
 
 This tutorial uses keycloak server and springboot application both running in localhost
 
-This not shows the following:-
+This shows the following:-
 
 0) How to install and configure keycloak
 1) How to secure APIs written in springboot using keycloak
