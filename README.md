@@ -54,10 +54,13 @@ https://medium.com/@hasnat.saeed/setup-keycloak-server-on-ubuntu-18-04-ed8c7c79a
 
 Note: In the above link there are steps to make keycloak as demon and register as a service
 as well as creating a seperate user and group for keycloak. I'm not doing those. I'm just running
-keycloak as a stand alone program in a shell and when shell exits, keocloak exits
+keycloak as a stand alone program in a shell and when shell exits, keycloak exits
 
 VERY VERY IMPORTANT:-
-IF WE DON;T FOLLOW THE BELOW TWO STEPS, WE CANNOT ACCESS KEYCLOAK SERVER OUTSIDE LOCAL HOST PUBLICALLY
+IF WE DON'T FOLLOW THE BELOW STEPS, WE CANNOT ACCESS KEYCLOAK SERVER OUTSIDE LOCAL HOST PUBLICALLY 
+
+[Note: Do this if you are had already configured https since keycloak accepts only outside connection through https]
+[Note: If you are running keycloak under localhost then ignore these steps and jump to step# 11]
 ******************************************************************************************************************************
 5) chnage the default port of keycloak server from 8080 to something else
 	sudo vi /opt/keycloak/standalone/configuration/standalone.xml
@@ -124,7 +127,7 @@ https://medium.com/devops-dudes/securing-spring-boot-rest-apis-with-keycloak-1d7
 
 0) create a realm [eg:- IPL-Realm]
 
-1) Under the new real created create a client [eg:- IPL-Microservice]
+1) Under the new realm created create a client [eg:- IPL-Microservice]
 
 	client id- IPL-Microservice
 	client protocol - openid-connect
