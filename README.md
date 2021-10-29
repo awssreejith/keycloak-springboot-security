@@ -143,14 +143,19 @@ https://medium.com/devops-dudes/securing-spring-boot-rest-apis-with-keycloak-1d7
 Note: Check the above link to see how to do that. I had cerated 3 roles [app-player, app-umpire, app-matchreferee]
 
 5)Under manage->user create 3 users 
+
 [viratkohli -> app-player]
+
 [kumardharmasena -> app-umpire]
+
 [simontauffel -> app-matchreferee]
 
 6) copy the token endpoint from Realm tab
+
 http://localhost:8080/auth/realms/IPL-Realm/protocol/openid-connect/token
 
 7) go to clients tab and go to credentials and copy the secret key
+
 eg:- ca1c9dcb-63c0-448c-8f20-d8737b8dcc70
 
 8) Go to Realm settings tab and Tokens. By default the access token lifespan is only 5 minutes. chnage this to a greater value accordigly
@@ -179,6 +184,7 @@ curl -X POST 'http://localhost:8080/auth/realms/IPL-Realm/protocol/openid-connec
 #########################################################################################################################################
 
 Step-3) Create springboot application
+
 Note: This application consists of a microservice called IPL-Microservice with 4 REST endpoints where
 
 /ipl/player --> only accesible to players 
@@ -188,8 +194,9 @@ Note: This application consists of a microservice called IPL-Microservice with 4
 
 
 0)Dependencies: 
+
 Add Spring Web, 
-Spring Security
+Spring Security,
 Spring Boot DevTools
 
 1) update pom.xml to add the below
@@ -267,7 +274,7 @@ For Umpire
 curl -X GET "http://localhost:8099/ipl/umpireOnly" --header "Authorization: bearer "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDcml0dndkNTdVSFcyaHFleDNDaVR4b2tlcDNTem84RlNJNENrUGlJUmhNIn0.eyJleHAiOjE2MzU1MjU3NzUsImlhdCI6MTYzNTUwNzc3NSwianRpIjoiODkwMzdiYzAtOTRjMC00NDdlLWI0ZTItMTYxOTJmNGY4Zjg3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0lQTC1SZWFsbSIsInN1YiI6ImVkMjNlNjIxLTEyMGUtNGNhNS1hMWIwLWViNGEzNjczYzQyOCIsInR5cCI6IkJlYXJlciIsImF6cCI6IklQTC1NaWNyb3NlcnZpY2UiLCJzZXNzaW9uX3N0YXRlIjoiN2YzOWQzMjktNDAyMi00ODJkLTk4ZmItNzg0NWQ1ZDE5N2NmIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgxODEiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImFwcC11bXBpcmUiXX0sInJlc291cmNlX2FjY2VzcyI6eyJJUEwtTWljcm9zZXJ2aWNlIjp7InJvbGVzIjpbInVtcGlyZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjdmMzlkMzI5LTQwMjItNDgyZC05OGZiLTc4NDVkNWQxOTdjZiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJrdW1hcmRoYXJtYXNlbmEifQ.ROoY72w4Josv3l3F7AuDG5oWMy9eDEw9-A_xoAn1oFzM0_diMTsOcpCc-wbOsALlH5VcTHm7fMZw0s66LS9VgYeEo7I3dCQgwEssoDT9Vu3-fSjZqo8txiH3Vki4vX9IC0pnrS0bAhOP3e0Gf9nFfCYnqbzJx1OuusDOyH6fSjZ-UQFf_ScvPagX8-0lWUSL3fRHGXUkPBcC9m94dAIDYfSzYvUZTzWCu93VGO5I-xOtIV4h0yWpCdRWzoKTNFP0YrlOlvZ_QJ15e1d7rjHMb_MABaBt5xFzLdJUx6MNbNl2sf8SZU2opAaSGhjwiREzqh-C8M7pHl2iaMJSefbo9Q"
 
 
-For Math referee
-================
+For Match referee
+=================
 
 curl -X GET "http://localhost:8099/ipl/matchRefereeOnly" --header "Authorization: bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDcml0dndkNTdVSFcyaHFleDNDaVR4b2tlcDNTem84RlNJNENrUGlJUmhNIn0.eyJleHAiOjE2MzU1MjU5NTksImlhdCI6MTYzNTUwNzk1OSwianRpIjoiZDU2NWRjMWUtZDhkNC00ZmFiLWE0NDEtNjU5ZTk4OTFhOTNjIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL0lQTC1SZWFsbSIsInN1YiI6IjU0Y2M4YmMyLTg5MDctNDE0MC1hMzhhLWVjZWY5YjFhNWE5ZCIsInR5cCI6IkJlYXJlciIsImF6cCI6IklQTC1NaWNyb3NlcnZpY2UiLCJzZXNzaW9uX3N0YXRlIjoiMzg3OWI0NzktMTVlOC00OGI3LTgxMDctMWE2YWFjYjIzZjQ4IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgxODEiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImFwcC1tYXRjaHJlZmVyZWUiLCJhcHAtdW1waXJlIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiSVBMLU1pY3Jvc2VydmljZSI6eyJyb2xlcyI6WyJtYXRjaHJlZmVyZWUiLCJ1bXBpcmUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiIzODc5YjQ3OS0xNWU4LTQ4YjctODEwNy0xYTZhYWNiMjNmNDgiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2ltb250YXVmZmVsIn0.c1Qjggh64O7Wfa1aDxVMtD0X_Ok0AK5ZpGZdmB4B93YWcFCeLQEw0zGIZG7HzSYO0jJh1RCVshHYrKDH04uFJ6LMKbqJF6tK45ztHcJamSMVtXBrckukf5GCHl7VsnlTMx2YKqzODMsJg2FeVJugVzvJ0MxA60yDLL9KxvnmkYVGEftg3lYACExiYX-vSGMch74P0YhUmvsSNCdTczdIeoy7AEeW43P9GgbVMtso1uEArFErJBrXpdOfBcsBidV1NQ9BfQa30O0gwf9qTBfzmcA6CsGyvA4nvvBJTSw2V5VBQr5Gdqf7tTyar_QdlLfr84m_b88RQ7YimGma9u74lw"
