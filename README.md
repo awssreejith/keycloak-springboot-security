@@ -68,7 +68,7 @@ IF WE DON'T FOLLOW THE BELOW STEPS, WE CANNOT ACCESS KEYCLOAK SERVER OUTSIDE LOC
 	
 6) Check the below ports are not used in this server. If so chnage all the below ports accordignly
 
-   <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+//   <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
         <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
         <socket-binding name="http" port="${jboss.http.port:8888}"/>
         <socket-binding name="https" port="${jboss.https.port:8443}"/>
@@ -79,13 +79,12 @@ IF WE DON'T FOLLOW THE BELOW STEPS, WE CANNOT ACCESS KEYCLOAK SERVER OUTSIDE LOC
         <outbound-socket-binding name="mail-smtp">
             <remote-destination host="${jboss.mail.server.host:localhost}" port="${jboss.mail.server.port:25}"/>
         </outbound-socket-binding>
-    </socket-binding-group>
+    </socket-binding-group> //
 
 
 7) sudo vi /opt/keycloak/standalone/configuration/standalone.xml
 
 Replace the below stuff
------------------------
 <interface name="management">
     <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
 </interface>
