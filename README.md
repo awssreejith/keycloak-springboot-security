@@ -4,8 +4,11 @@ This repository contains sample implementation for how to secure API using sprin
 In this implementation the microservice IPL-Microservice will expose 4 endpoints viz 
 
 /ipl/all
+
 /ipl/playerOnly
+
 /ipl/umpireOnly
+
 /ipl/matchRefereeOnly
 
 This microservice defines 3 roles viz
@@ -192,8 +195,11 @@ Step-3) Create springboot application
 Note: This application consists of a microservice called IPL-Microservice with 4 REST endpoints where
 
 /ipl/player --> only accesible to players 
+
 /ipl/umpire --> only accesible to umpires and match referee
+
 /ipl/matchreferee --> only accesible to match referee
+
 /ipl/all --> accesible to all
 
 
@@ -213,6 +219,7 @@ a)
    
 < /properties >
 
+b)
 
    < dependency >
    
