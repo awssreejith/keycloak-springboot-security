@@ -246,18 +246,20 @@ a)
    
    
 c) Add Dependency Management
+
 Below the <dependencies> section add below section.
-<dependencyManagement>
-   <dependencies>
-      <dependency>
-         <groupId>org.keycloak.bom</groupId>
-         <artifactId>keycloak-adapter-bom</artifactId>
-         <version>${keycloak.version}</version>
-         <type>pom</type>
-         <scope>import</scope>
-      </dependency>
-   </dependencies>
-</dependencyManagement>
+	
+< dependencyManagement >
+   < dependencies >
+      < dependency >
+         < groupId >org.keycloak.bom< /groupId >
+         < artifactId >keycloak-adapter-bom< /artifactId >
+         < version >${keycloak.version}< /version >
+         < type >pom< /type >
+         < scope >import< /scope >
+      < /dependency >
+   < /dependencies >
+< /dependencyManagement >
 
 
 2) add the below in application.properties file
