@@ -287,12 +287,13 @@ keycloak.use-resource-role-mappings = true
 	
 keycloak.bearer-only                = true
 
+3) Implement configuration class and rest controller [check the source code]
 
-3) implement configuration class and rest controller [check the source code in git]
+4) Ensure the endpoints are not accesible simply through GET request 
 
-4) ensure the endpoints are not accesible simply through GET request 
+5) Issue the proper curl command with the token as below
 
-5) issue the proper curl command with the token as below
+	Note:For linux replace double quotes with single quotes
 
 For player
 ==========
