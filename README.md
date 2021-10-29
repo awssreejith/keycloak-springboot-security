@@ -85,21 +85,23 @@ IF WE DON'T FOLLOW THE BELOW STEPS, WE CANNOT ACCESS KEYCLOAK SERVER OUTSIDE LOC
 7) sudo vi /opt/keycloak/standalone/configuration/standalone.xml
 
 Replace the below stuff
-<interface name="management">
-    <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
-</interface>
-<interface name="public">
-    <inet-address value="${jboss.bind.address:0.0.0.0}"/>
-</interface>
+
+< interface name="management" >
+    < inet-address value="${jboss.bind.address.management:127.0.0.1}"/ >
+< /interface >
+< interface name="public" >
+    < inet-address value="${jboss.bind.address:0.0.0.0}"/ >
+< /interface >
 
 with this stuff
 ---------------
-<interface name="management">
-    <any-address/>
-</interface>
-<interface name="public">
-    <any-address/>
-</interface>
+
+< interface name="management" >
+    < any-address/ >
+< /interface >
+< interface name="public" >
+    < any-address/ >
+< /interface >
 
 8) save the file
 
@@ -120,6 +122,7 @@ After step 10 only we can access the admin dashboard
 
 Step-2:- Configure keycloak
 ===========================
+
 Follow below link to configure springboot application with keycloak
 
 https://medium.com/devops-dudes/securing-spring-boot-rest-apis-with-keycloak-1d760b2004e
@@ -162,6 +165,8 @@ eg:- ca1c9dcb-63c0-448c-8f20-d8737b8dcc70
 9) Generate access tokens for all users generated as below
 
 Example 
+[Note: Replace double quotes with single quotes for linux]
+
 For windows issue the below command
 
 curl -X POST "http://localhost:8080/auth/realms/IPL-Realm/protocol/openid-connect/token" --header "Content-Type: application/x-www-form-urlencoded" --data-urlencode "grant_type=password" --data-urlencode "client_id=IPL-Microservice" --data-urlencode "client_secret=ca1c9dcb-63c0-448c-8f20-d8737b8dcc70" --data-urlencode "username=viratkohli" --data-urlencode "password=p@mypassword"
