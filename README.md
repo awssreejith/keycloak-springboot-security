@@ -34,6 +34,11 @@ VERY VERY IMPORTANT:- IF YOU ARE INSTALLING KEYCLOAK IN A DIFFERENT SERVER AND A
 
 https://wjw465150.gitbooks.io/keycloak-documentation/content/server_installation/topics/network/https.html
 
+A more comprehensive detail about configuring SpringBoot with Keycloak/OAuth2 OIDC can be found under below url
+
+https://medium.com/@bcarunmail/securing-rest-api-using-keycloak-and-spring-oauth2-6ddf3a1efcc2
+
+
 This tutorial uses keycloak server and springboot application both running in localhost
 
 This shows the following:-
